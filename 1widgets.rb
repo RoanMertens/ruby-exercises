@@ -24,4 +24,4 @@ puts "A widget costs 10 coins."
 puts "But we might be able to make a deal if you buy enough widgets."
 a = answer("How many widgets do you want?")
 
-puts price(a)
+puts "The price for #{a} is #{price(a)} coins"
