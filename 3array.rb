@@ -7,7 +7,7 @@ name = {
 
 def myself(k, v)
 	if v == "roan"
-		puts "And #{key} am #{val}."
+		puts "And #{k} am #{v}."
 	else
 		puts "my #{k} is #{v}."
 	end
