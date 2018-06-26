@@ -1,8 +1,16 @@
 name = {
 	mother: "jaq",
 	father: "ton",
-	girlfriend: "dide",
+	wife: "dide",
 	i: "roan",
 }
 
-name.each{|key,val| puts "my #{key} is #{val}."}
+def myself(k, v)
+	if v == "roan"
+		puts "And #{key} am #{val}."
+	else
+		puts "my #{k} is #{v}."
+	end
+end
+
+name.each{|key,val| myself(key, val)}
