@@ -11,6 +11,12 @@ family = {
 	i: "roan",
 }
 
+friends << "bertus"
+family[:neef] = "bertus"
+friends.push("freddie")
+family[:neefje] = "freddie"
+friends.unshift("dide")
+
 #method to recognize myself from my family.
 def myself(k, v)
 	if v == "roan"
@@ -30,3 +36,4 @@ friends.each do |name| a += 1
 	puts "#{name.capitalize} is a friend of me."
   end
 end
+
