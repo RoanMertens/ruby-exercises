@@ -39,3 +39,5 @@ friends.each do |name| a += 1
   end
 end
 
+puts family.keys
+puts family.values
