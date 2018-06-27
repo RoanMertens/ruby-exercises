@@ -11,6 +11,7 @@ family = {
 	i: "roan",
 }
 
+#added a couple of people to the friends array and family hash.
 friends << "bertus"
 family[:neef] = "bertus"
 friends.push("freddie")
