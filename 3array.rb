@@ -17,6 +17,7 @@ family[:neef] = "bertus"
 friends.push("freddie")
 family[:neefje] = "freddie"
 friends.unshift("dide")
+friends.insert(1, "frank")
 
 #method to recognize myself from my family.
 def myself(k, v)
