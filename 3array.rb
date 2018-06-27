@@ -1,4 +1,4 @@
-name = {
+family = {
 	mother: "jaq",
 	father: "ton",
 	wife: "dide",
@@ -13,4 +13,4 @@ def myself(k, v)
 	end
 end
 
-name.each{|key,val| myself(key, val)}
+family.each{|key,val| myself(key, val)}
