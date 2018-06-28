@@ -45,6 +45,29 @@ def present(winner, rolled, player1, player2)
 	end
 end
 
+def players(rolled, player)
+	if rolled <= player
+		diff1 = rolled - player
+	else
+		diff1 = player - rolled
+	end 
+end
+
+def calcans(diff1, diff2)
+	winner = "draw"
+	if diff1 > diff2
+		winner = "ans1"
+	elsif diff2 > diff1
+		winner = "ans2"
+	elsif diff1 == diff2
+		winner = "draw"
+	else
+		winner = "error"
+	end
+end
+
+
+
 rolled = roll(play)
 
 print "Player 1 chooses the number : "
@@ -53,28 +76,9 @@ player1 = gets.chomp.to_i
 print "Player 2 chooses the number : "
 player2 = gets.chomp.to_i
 
+diff1 = players(rolled, player1)
+diff2 = players(rolled, player2)
 
-if rolled <= player1
-	diff1 = rolled - player1
-else
-	diff1 = player1 - rolled
-end 
-
-if rolled <= player2
-	diff2 = rolled - player2
-else
-	diff2 = player2 - rolled
-end 
-
-winner = "draw"
-if diff1 > diff2
-	winner = "ans1"
-elsif diff2 > diff1
-	winner = "ans2"
-elsif diff1 == diff2
-	winner = "draw"
-else
-	winner = "error"
-end
+winner = calcans(diff1, diff2)
 
 present(winner, rolled, player1, player2)
