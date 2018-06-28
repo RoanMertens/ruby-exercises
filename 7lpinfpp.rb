@@ -18,9 +18,9 @@ def everyone_name(amount_ppl)
 	amount_players = 0
 	until amount_players == amount_ppl
 		amount_players += 1
-		print "player #{amount_players} choose your name: "
+		print "Player #{amount_players} choose your name: "
 		name = gets.chomp.to_s
-		print "#What number wil you choose {name}: "
+		print "What number wil you choose #{name}: "
 		playernr = gets.chomp.to_i
 		all_players += [name, playernr]
 	end
@@ -101,41 +101,77 @@ amount_ppl = numbppl
 
 all_players = everyone_name(amount_ppl)
 
+selectnr = all_players.select {|all| all.is_a? Integer }
+selectname = all_players.select {|all| all.is_a? String }
+
 how_close = play_diff(all_players, rolled)
 
-selectnr = how_close.select {|all| all.is_a? Integer }
-selectname = how_close.select {|all| all.is_a? String }
+
+@players_hash = Hash.new(0)
+
+all_players.each do |players| 
+	if players.is_a? String
+		@players_hash[players] = ""
+	end
+end
+
+puts @players_hash
+
+if @players_hash[0] == true
+	@players_hash[selectname[0]] = (all_players[0])
+	return @players_hash
+end
+
+if @players_hash[1] == nil
+	@players_hash[selectname[1]] = (selectnr[1])
+	return @players_hash
+end
+
+puts @players_hash
 
 #sorting the numbers
 selectnr.sort!
 
-puts selectnr
-#matching the sorted numbers to the names
-
 puts "The right answer is: #{rolled}"
 puts ".."
 
-what_place = 0
-how_close.map do |name| counting_times = 0
-	until counting_times == amount_ppl do
-		if name == selectnr[(counting_times - 1)] && name.is_a? Integer
-			what_place += 1
-			puts "Number #{what_place} is #{all_players[(counting_times - 1)]} with the answer of #{all_players[counting_times]}"
+
+=begin
+a = 0
+b = 1
+while b != amount_ppl
+	d = (a + 1)
+	@players_hash[selectname[a]] = selectnr[1]
+	a += 1
+	b += 1
+end
+=end
+
+
+
+
+
+
+=begin
+what_place = 0 
+until what_place >= amount_ppl do
+	all_players.each do |player| counting_times = 0
+		if player == selectnr[counting_times]
+				what_place += 1
+				puts "Number #{what_place} is #{all_players[counting_times]} with the answer #{all_players[(counting_times + 1)]}"
 		end
 		counting_times += 1
 	end
 end
-
+=end
 
 =begin
-counting_times = 1 
-until counting_times == amount_ppl do
-	how_close.map do |name|
-		if name == selectnr[(counting times - 1)]
-			puts how_close[((name * 2)-1)]
-			a += 1
+selectnr.each {|nr| 
+	all_players.map {|player|
+		if player == nr
+			right_number = player
 		end
-	end
-	counting_times += 1
-end
+	}
+	return right_number
+}
 =end
