@@ -1,7 +1,7 @@
 #game intro + dice roll.
 def play
 	puts "Lets play a game of guessing the number!"
-	print "The correct number in this game will be from 0 to "
+	print "The correct number in this game will be between 0 and "
 	ans = gets.chomp.to_i
 	return Random.new.rand(ans)
 end
@@ -20,7 +20,7 @@ def everyone_name(amount_ppl)
 		amount_players += 1
 		print "player #{amount_players} choose your name: "
 		name = gets.chomp.to_s
-		print "#{name} choose your number: "
+		print "#What number wil you choose {name}: "
 		playernr = gets.chomp.to_i
 		all_players += [name, playernr]
 	end
@@ -103,29 +103,39 @@ all_players = everyone_name(amount_ppl)
 
 how_close = play_diff(all_players, rolled)
 
-#comparing twoo players
-def who_wins(how_close)
-	
-	if how_close[a] > how_close[b]
-		winner = how_close[a-1]
-	elsif  how_close[a] < how_close[b]
-		winner = how_close[a-1]
-	else
-		winner = "draw"
+selectnr = how_close.select {|all| all.is_a? Integer }
+selectname = how_close.select {|all| all.is_a? String }
+
+#sorting the numbers
+selectnr.sort!
+
+puts selectnr
+#matching the sorted numbers to the names
+
+puts "The right answer is: #{rolled}"
+puts ".."
+
+what_place = 0
+how_close.map do |name| counting_times = 0
+	until counting_times == amount_ppl do
+		if name == selectnr[(counting_times - 1)] && name.is_a? Integer
+			what_place += 1
+			puts "Number #{what_place} is #{all_players[(counting_times - 1)]} with the answer of #{all_players[counting_times]}"
+		end
+		counting_times += 1
+	end
 end
 
 
-amount_ppl.times do 
-
 =begin
-diff1 = players(rolled, player1)
-diff2 = players(rolled, player2)
-
-winner = calcans(diff1, diff2)
-
-present(winner, rolled, player1, player2)
+counting_times = 1 
+until counting_times == amount_ppl do
+	how_close.map do |name|
+		if name == selectnr[(counting times - 1)]
+			puts how_close[((name * 2)-1)]
+			a += 1
+		end
+	end
+	counting_times += 1
+end
 =end
-
-puts "The right answer is: "
-puts "And!"
-puts "Number #{} is #{} with the answer of #{}"
