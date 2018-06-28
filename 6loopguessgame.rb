@@ -66,8 +66,6 @@ def calcans(diff1, diff2)
 	end
 end
 
-
-
 rolled = roll(play)
 
 print "Player 1 chooses the number : "
