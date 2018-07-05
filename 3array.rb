@@ -33,9 +33,9 @@ family.each{|key,val| myself(key, val)}
 friends.each do |name| a += 1
   if a == friends.length
 	puts "And last but not least."
-	puts "#{name.capitalize} is a friend of me."
+	puts "#{name.capitalize} is a friend of mine."
   else
-	puts "#{name.capitalize} is a friend of me."
+	puts "#{name.capitalize} is a friend of mine."
   end
 end
 
