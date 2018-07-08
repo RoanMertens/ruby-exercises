@@ -32,11 +32,11 @@ class Human
 	end
 	
 	def full_name
-		puts "#{@first_name} #{@middle_name} #{@last_name}"
+		"#{@first_name} #{@middle_name} #{@last_name}"
 	end
 
 	def age_and_name
-		puts "#{@first_name} is #{@age} years old."
+		"#{@first_name} is #{@age} years old."
 	end
 
 end
@@ -47,10 +47,10 @@ puts new_human.first_name + " " +
 	new_human.middle_name + " " +
 	new_human.last_name + " is " +
 	new_human.age.to_s + " years old."
-new_human.full_name
-new_human.age_and_name
+puts new_human.full_name
+puts new_human.age_and_name
 
 new_human.age = 13
 
-new_human.age_and_name
+puts new_human.age_and_name
 
