@@ -22,38 +22,38 @@ puts ""
 #Human class with instances that are possible to make unique.
 class Human
 
-	def initialize(firstname, middlename, lastname, age)
-		@firstname = firstname
-		@middlename = middlename
-		@lastname = lastname
+	def initialize(first_name, middle_name, last_name, age)
+		@first_name = first_name
+		@middle_name = middle_name
+		@last_name = last_name
 		@age = age
 	end
-	def givefirstname
-		puts @firstname
+	def give_first_name
+		puts @first_name
 	end
-	def givemiddlename
-		puts @middlename
+	def give_middle_name
+		puts @middle_name
 	end
-	def givelastname
-		puts @lastname
+	def give_last_name
+		puts @last_name
 	end
-	def givefullname
-		puts "#{@firstname} #{@middlename} #{@lastname}"
+	def give_full_name
+		puts "#{@first_name} #{@middle_name} #{@last_name}"
 	end
-	def giveage
+	def give_age
 		puts @age
 	end
-	def giveboth
-		puts "#{@firstname} is #{@age} years old."
+	def give_both
+		puts "#{@first_name} is #{@age} years old."
 	end
 end
 
-newhuman = Human.new("Bert", "Bernard", "Brum", 12)
+new_human = Human.new("Bert", "Bernard", "Brum", 12)
 
-newhuman.givefirstname
-newhuman.givemiddlename
-newhuman.givelastname
-newhuman.givefullname
-newhuman.giveage
-newhuman.giveboth
+new_human.give_first_name
+new_human.give_middle_name
+new_human.give_last_name
+new_human.give_full_name
+new_human.give_age
+new_human.give_both
 
