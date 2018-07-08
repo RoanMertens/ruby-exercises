@@ -23,7 +23,7 @@ puts ""
 #Human class with instances that are possible to make unique.
 class Human
 	attr_reader :first_name, :middle_name, :last_name, :age 
-
+	attr_writer :age
 	def initialize(first_name, middle_name, last_name, age)
 		@first_name = first_name
 		@middle_name = middle_name
@@ -37,10 +37,6 @@ class Human
 
 	def age_and_name
 		puts "#{@first_name} is #{@age} years old."
-	end
-
-	def age=(new_age)
-		@age = new_age
 	end
 
 end
